@@ -1,3 +1,9 @@
+# revision 20033
+# category Package
+# catalog-ctan /fonts/gentium
+# catalog-date 2010-10-09 15:59:49 +0200
+# catalog-license ofl
+# catalog-version undef
 Name:		texlive-gentium
 Version:	20101009
 Release:	1
@@ -110,6 +116,7 @@ encodings, and LaTeX support remain to be added.
 %doc %{_texmfdistdir}/source/fonts/gentium/generate-tfm-files.sh
 %doc %{_texmfdistdir}/source/fonts/gentium/gentium-ec-source.enc
 %doc %{_texmfdistdir}/source/fonts/gentium/gentium-t5-source.enc
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -120,3 +127,5 @@ encodings, and LaTeX support remain to be added.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
