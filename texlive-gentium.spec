@@ -18,9 +18,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
-Conflicts:	texlive-source <= 20110705-3
 
 %description
 The package includes TrueType fonts from SIL, files needed to
@@ -28,20 +25,12 @@ use them in pdfTeX in multiple encodings (agr, t2a, ec/T1,
 texnansi, l7x, qx, t5) and support files for ConTeXt. Other
 encodings, and LaTeX support remain to be added.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -117,7 +106,6 @@ encodings, and LaTeX support remain to be added.
 %doc %{_texmfdistdir}/source/fonts/gentium/generate-tfm-files.sh
 %doc %{_texmfdistdir}/source/fonts/gentium/gentium-ec-source.enc
 %doc %{_texmfdistdir}/source/fonts/gentium/gentium-t5-source.enc
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -128,5 +116,3 @@ encodings, and LaTeX support remain to be added.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc source %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
