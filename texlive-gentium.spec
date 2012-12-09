@@ -116,3 +116,17 @@ encodings, and LaTeX support remain to be added.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc source %{buildroot}%{_texmfdistdir}
+
+
+%changelog
+* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 20101009-2
++ Revision: 752254
+- Rebuild to reduce used resources
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 20101009-1
++ Revision: 718533
+- texlive-gentium
+- texlive-gentium
+- texlive-gentium
+- texlive-gentium
+
