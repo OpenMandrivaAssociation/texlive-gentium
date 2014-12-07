@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-gentium
 Version:	20101009
-Release:	8
+Release:	9
 Summary:	Gentium font and support files
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/gentium
