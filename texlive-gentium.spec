@@ -9,7 +9,7 @@ Version:	20101009
 Release:	12
 Summary:	Gentium font and support files
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/fonts/gentium
+URL:		https://www.ctan.org/tex-archive/fonts/gentium
 License:	OFL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/gentium.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/gentium.doc.tar.xz
